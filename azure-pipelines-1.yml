@@ -19,7 +19,7 @@ steps:
     resourceGroupName: 'project-try-5'
     location: 'West Central US'
     templateLocation: 'Linked artifact'
-    csmFile: 'https://raw.githubusercontent.com/tapas11076/infra-deploy1/main/infra-deploy1.bicep'
+    csmFile: 'infra-deploy1.bicep'
     overrideParameters: |
       -vnetName project-try-5
       -sourceSSHAddress 43.251.171.118/32
