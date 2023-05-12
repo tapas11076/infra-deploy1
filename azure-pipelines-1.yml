@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'ADO-Linked-Subscription(1)(3c4a1810-ddb7-481a-9558-461ac6289480)'
+    subscriptionId: '3c4a1810-ddb7-481a-9558-461ac6289480'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'project-try-5'
+    location: 'West Central US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/tapas11076/infra-deploy1/main/infra-deploy1.bicep'
+    overrideParameters: |
+      -vnetName project-try-5
+      -sourceSSHAddress 43.251.171.118/32
+    deploymentMode: 'Incremental'
+    deploymentName: 'project-try-5-devops-deployment'
