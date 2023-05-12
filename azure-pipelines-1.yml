@@ -18,8 +18,8 @@ steps:
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'project-try-5'
     location: 'West Central US'
-    templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/tapas11076/infra-deploy1/main/infra-deploy1.bicep'
+    templateLocation: 'Linked artifact'
+    csmFile: 'https://raw.githubusercontent.com/tapas11076/infra-deploy1/main/infra-deploy1.bicep'
     overrideParameters: |
       -vnetName project-try-5
       -sourceSSHAddress 43.251.171.118/32
