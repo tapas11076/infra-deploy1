@@ -32,7 +32,7 @@ resource Main1NSG 'Microsoft.Network/networkSecurityGroups@2022-07-01' = {
     Project : 'Devops-Infra-Deploy'
   }
   properties: {
-    flushConnection: true
+    flushConnection: false
     securityRules: [
       {
         id: 'ssh-rule'
