@@ -22,6 +22,6 @@ steps:
     csmFile: 'infra-deploy1.bicep'
     csmParametersFile: 'parameter.json'
     overrideParameters: |
-      '-vnetName project-try-5 -sourceSSHAddress 43.251.171.118/32'
+     - vnetName "project-try-5" - sourceSSHAddress "43.251.171.118/32"
     deploymentMode: 'Incremental'
     deploymentName: 'project-try-5-devops-deployment'
