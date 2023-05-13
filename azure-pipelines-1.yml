@@ -20,7 +20,6 @@ steps:
     location: 'West Central US'
     templateLocation: 'Linked artifact'
     csmFile: './infra-deploy1.bicep'
-    csmParametersFile: 'parameter.json'
     overrideParameters:
       -vnetName "project-try-5" 
       -sourceSSHAddress "43.251.171.118/32"
