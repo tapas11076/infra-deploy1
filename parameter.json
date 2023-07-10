@@ -3,7 +3,10 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "vnetName": {
-      "value": "project-try-5"
+      "value": "project-try-5",
+      "metadata":{
+        "description": "Virtual Network Name"
+      }
     },
     "sourceSSHAddress": {
       "value": "157.40.86.219/32"
