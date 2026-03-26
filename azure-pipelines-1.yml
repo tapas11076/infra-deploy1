@@ -1,14 +1,13 @@
 # Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
+# Use a variable group (or pipeline variables) to provide sensitive or environment-specific values.
 trigger:
 - main
 
 pool:
   vmImage: ubuntu-latest
 
+# Recommended: create an Azure DevOps variable group (e.g. infra-params) and link it to this pipeline.
+# Put sourceSSHAddress in the variable group and mark it as secret, or supply at queue-time.
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
@@ -20,8 +19,9 @@ steps:
     location: 'West Central US'
     templateLocation: 'Linked artifact'
     csmFile: './infra-deploy1.bicep'
+    # Pass the vnet name and the SSH CIDR as pipeline variables rather than hardcoding IPs in YAML.
     overrideParameters:
-      -vnetName "project-try-5" 
-      -sourceSSHAddress "43.251.171.118/32"
+      -vnetName "$(vnetName)"
+      -sourceSSHAddress "$(sourceSSHAddress)"
     deploymentMode: 'Incremental'
     deploymentName: 'project-try-5-devops-deployment'

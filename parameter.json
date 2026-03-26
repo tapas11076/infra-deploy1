@@ -9,7 +9,10 @@
       }
     },
     "sourceSSHAddress": {
-      "value": "157.40.86.219/32"
+      "value": "",
+      "metadata": {
+        "description": "Provide the allowed SSH source CIDR at deploy time (do NOT use 0.0.0.0/0). Prefer setting this from a secure pipeline variable group."
+      }
     }
   }
 }
